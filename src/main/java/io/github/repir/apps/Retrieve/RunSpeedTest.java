@@ -36,7 +36,7 @@ public class RunSpeedTest {
       RetrieverMRInputFormat.setSplitable(true);
       RetrieverMRInputFormat.setIndex(repository);
       retriever.doJob(retriever.queue);
-      log.info("%s started", conf.get("iref.conf"));
+      log.info("%s started", conf.get("repir.conf"));
    }
 
 

@@ -1,2 +1,2 @@
-iref.proximitymodel
+repir.proximity
 ===================

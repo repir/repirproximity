@@ -161,17 +161,17 @@ public abstract class Solution<P extends Parameter> {
    }
 
    public RetrievePoint computePoint(point p) {
-      Configuration conf = HDTools.readConfig(this.repository.getConfigurationString("iref.conf"));
+      Configuration conf = HDTools.readConfig(this.repository.getConfigurationString("repir.conf"));
       if (conf.getInt("tuner.max", MAX) != MAX) {
          MAX = conf.getInt("tuner.max", MAX);
-         log.info("new max tuners %s %d", this.repository.getConfigurationString("iref.conf"), MAX);
+         log.info("new max tuners %s %d", this.repository.getConfigurationString("repir.conf"), MAX);
       }
       p.setParameters(conf);
       return new RetrievePoint(this, p, conf);
    }
 
    public void writePoints() {
-      log.info("writepoints %s %d", repository.getConfigurationString("iref.conf"), newrecords.size());
+      log.info("writepoints %s %d", repository.getConfigurationString("repir.conf"), newrecords.size());
       int size = newrecords.size();
       modelparameters.closeRead();
       modelparameters.openWrite();

@@ -2,12 +2,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    <modelVersion>4.0.0</modelVersion>
 
-   <groupId>vu.nl.iref</groupId>
+   <groupId>io.github.repir</groupId>
    <artifactId>RepIRProximity</artifactId>
-   <version>0.21a-SNAPSHOT</version>
+   <version>0.22-SNAPSHOT</version>
    <packaging>jar</packaging>
    <name>RepIRProximity</name>
-   <url>http://proximitymodel.iref.nl.vu</url>
+   <url>http://repir.github.io</url>
 
    <licenses>
       <license>
@@ -22,9 +22,9 @@
   </properties>
   
    <scm>
-      <connection>scm:git:git@github.com:jeroenvuurens/iref.proximitymodel.git</connection>
-      <developerConnection>scm:git:git@github.com:jeroenvuurens/iref.proximitymodel.git</developerConnection>
-      <url>git@github.com:jeroenvuurens/iref.proximitymodel.git</url>
+      <connection>scm:git:git@github.com:RepIR/RepIRProximity.git</connection>
+      <developerConnection>scm:git:git@github.com:RepIR/RepIRProximity.git</developerConnection>
+      <url>git@github.com:RepIR/RepIRProximity.git</url>
    </scm>
   
    <developers>
