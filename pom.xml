@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+
+   <groupId>vu.nl.iref</groupId>
+   <artifactId>RepIRProximity</artifactId>
+   <version>0.21a-SNAPSHOT</version>
+   <packaging>jar</packaging>
+   <name>RepIRProximity</name>
+   <url>http://proximitymodel.iref.nl.vu</url>
+
+   <licenses>
+      <license>
+         <name>The Apache Software License, Version 2.0</name>
+         <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+         <distribution>repo</distribution>
+      </license>
+   </licenses>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+   <scm>
+      <connection>scm:git:git@github.com:jeroenvuurens/iref.proximitymodel.git</connection>
+      <developerConnection>scm:git:git@github.com:jeroenvuurens/iref.proximitymodel.git</developerConnection>
+      <url>git@github.com:jeroenvuurens/iref.proximitymodel.git</url>
+   </scm>
+  
+   <developers>
+      <developer>
+         <id>jeroenvuurens</id>
+         <name>Jeroen Vuurens</name>
+         <email>jbpvuurens@gmail.nl</email>
+      </developer>
+   </developers>
+
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
+   <profiles>
+      <profile> <!-- create javadoc and source JAR's for release -->
+         <id>createrelease</id>
+         <build>
+            <plugins>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-source-plugin</artifactId>
+                  <version>2.2</version>
+                  <executions>
+                     <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                           <goal>jar</goal>
+                        </goals>
+                     </execution>
+                  </executions>
+               </plugin>
+               <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-javadoc-plugin</artifactId>
+                  <version>2.9</version>
+                  <executions>
+                     <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                           <goal>jar</goal>
+                        </goals>
+                     </execution>
+                  </executions>
+               </plugin>
+            </plugins>
+         </build>
+      </profile>
+   </profiles>
+   
+   <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.7</version>
+            <configuration>
+               <target>  
+                  <scp todir="${to-dir}" 
+                       keyfile="${keyfile}"
+                       trust="true" failonerror="false"
+                       file="${project.build.directory}/${project.build.finalName}.jar">
+                  </scp>
+               </target>
+            </configuration>
+            <dependencies>
+               <dependency>
+                  <groupId>org.apache.ant</groupId>
+                  <artifactId>ant-jsch</artifactId>
+                  <version>1.9.1</version>
+               </dependency>
+               <dependency>
+                  <groupId>com.jcraft</groupId>
+                  <artifactId>jsch</artifactId>
+                  <version>0.1.50</version>
+               </dependency>
+            </dependencies>
+         </plugin>
+      </plugins>
+   </build>
+   
+   <dependencies>
+       <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>4.11</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.apache.hadoop</groupId>
+         <artifactId>hadoop-core</artifactId>
+         <version>0.20.2-cdh3u6</version>
+         <type>jar</type>
+      </dependency>
+      <dependency>
+         <groupId>io.github.repir</groupId>
+         <artifactId>RepIRTools</artifactId>
+         <version>0.21a-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+         <groupId>io.github.repir</groupId>
+         <artifactId>RepIR</artifactId>
+         <version>0.21a-SNAPSHOT</version>
+      </dependency>
+   </dependencies>
+</project>
