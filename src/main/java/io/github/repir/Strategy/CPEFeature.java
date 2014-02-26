@@ -337,7 +337,7 @@ public class CPEFeature extends GraphNode {
       final long id;
       final int termid[];
       double weight = 1;
-      final int span = Integer.MAX_VALUE;
+      final int span = repository.getConfigurationInt("cpe.maxspan", Integer.MAX_VALUE);
       final String phrasestring;
 
       public phrase(long id) {

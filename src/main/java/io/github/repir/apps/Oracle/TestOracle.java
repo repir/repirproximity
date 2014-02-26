@@ -49,7 +49,7 @@ public class TestOracle extends Configured implements Tool {
    public static Log log = new Log(TestOracle.class);
    public englishStemmer stemmer = englishStemmer.get();
    public static double wweights[] = {1.0, 0.5, 0.25};
-   public static int spans[] = {1, 3, 4, 5, 10, 20, 50, 100, 200, 500};
+   public static int spans[] = {2, 3, 4, 5, 10, 20, 50, 100, 200, 500};
    public static HashMap<term, term> termvariants = new HashMap<term, term>();
    public static String[][] components;
    public static String[] terms;

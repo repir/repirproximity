@@ -231,7 +231,7 @@ public abstract class Solution<P extends Parameter> {
       }
 
       public void setParameters(Configuration configuration) {
-         HDTools.addToConfiguration(configuration, getParameters());
+         configuration.read(getParameters());
       }
 
       public String getParameters() {
