@@ -19,7 +19,7 @@ public class rmtune {
       Repository repository = new Repository(parsedargs.get("configfile"));
       
       ModelParameters f = (ModelParameters) repository.getFeature(ModelParameters.class, repository.configurationName());
-      remove(f, parsedargs.getRepeatedGroup());
+      remove(f, parsedargs.getRepeatedGroup("settings"));
    }
    
    public static void remove(ModelParameters f, String settings[]) {

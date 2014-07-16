@@ -344,10 +344,10 @@ public class CPEProximityModel extends Operator {
       // an element of the phrase.
 
       final long id;
-      final PositionalOperator terms[]; // terms that are part of this combination
-      final int size;     // number of terms combined
-      final int span = maxcombinationspan;
-      final String phrasestring; // for debug purposes
+      final PositionalOperator terms[];    // terms that are part of this combination
+      final int size;                      // number of terms combined
+      final int span = maxcombinationspan; // maximum allowed span for an occurrence, only used for testing
+      final String phrasestring;           // for debug purposes
 
       public combination(long id) {
          this.id = id;
@@ -366,7 +366,7 @@ public class CPEProximityModel extends Operator {
          }
          return terms;
       }
-
+      
       public String toString() {
          return phrasestring;
       }

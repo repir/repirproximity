@@ -6,8 +6,8 @@ import io.github.repir.Repository.ModelSpeed.Record;
 import io.github.repir.Retriever.Document;
 import io.github.repir.Strategy.RetrievalModel;
 import io.github.repir.tools.Content.EOCException;
-import io.github.repir.tools.Content.StructureReader;
-import io.github.repir.tools.Content.StructureWriter;
+import io.github.repir.tools.Structure.StructureReader;
+import io.github.repir.tools.Structure.StructureWriter;
 import io.github.repir.tools.Lib.Log;
 
 /**
