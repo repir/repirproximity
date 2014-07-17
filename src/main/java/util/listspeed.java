@@ -1,13 +1,13 @@
 package util;
 
-import java.util.Map;
-import io.github.repir.Repository.Repository;
-import io.github.repir.Repository.ModelSpeed.Record;
 import io.github.repir.Repository.ModelSpeed;
+import io.github.repir.Repository.ModelSpeed.Record;
+import io.github.repir.Repository.Repository;
 import io.github.repir.tools.DataTypes.TreeMapComparable;
 import io.github.repir.tools.DataTypes.TreeMapComparable.TYPE;
 import io.github.repir.tools.Lib.Log;
 import io.github.repir.tools.Lib.PrintTools;
+import java.util.Map;
 
 public class listspeed {
 
