@@ -9,6 +9,7 @@ import io.github.repir.tools.Content.EOCException;
 import io.github.repir.tools.Structure.StructureReader;
 import io.github.repir.tools.Structure.StructureWriter;
 import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.Lib.Profiler;
 
 /**
  * Measures to time taken to retrieve a ranked list for a query in the mapper.
@@ -17,6 +18,7 @@ import io.github.repir.tools.Lib.Log;
 public class SpeedCollector extends CollectorCachable<Record> {
 
    public static Log log = new Log(SpeedCollector.class);
+   public static Profiler profiler = new Profiler(SpeedCollector.class);
    static ModelSpeed dummyfeature = new ModelSpeed(null);
    HashMap<Record, Record> records = new HashMap<Record, Record>();
 
@@ -73,7 +75,7 @@ public class SpeedCollector extends CollectorCachable<Record> {
 
    @Override
    public ModelSpeed getStoredDynamicFeature() {
-      ModelSpeed sdf = (ModelSpeed) this.getRepository().getFeature(ModelSpeed.class);
+      ModelSpeed sdf = ModelSpeed.get(this.getRepository());
       return sdf;
    }
 
@@ -146,13 +148,13 @@ public class SpeedCollector extends CollectorCachable<Record> {
       Record r = createRecord();
       r.query = strategy.query.id;
       r.strategy = strategy.query.getStrategyClass();
-      r.time = log.getTimePassed() / 1000;
+      r.time = profiler.getTimePassed() / 1000;
       records.put(r, r);
    }
 
    @Override
    public void prepareRetrieval() {
-     log.startTime();
+     profiler.startTime();
    }
 
    @Override

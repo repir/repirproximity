@@ -25,7 +25,7 @@ public class purgetune {
       Repository repository = new Repository(parsedargs.get("configfile"));
       Retriever retriever = new Retriever(repository);
       
-      ModelParameters f = (ModelParameters) repository.getFeature(ModelParameters.class, repository.configurationName());
+      ModelParameters f = ModelParameters.get(repository, repository.configurationName());
       ArrayList<Parameter> parameters = retriever.getParameters();
       ArrayList<String> settings = retriever.generatePoints(parameters);
       settings = retriever.removeKnownSettingsFold(repository, settings);

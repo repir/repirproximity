@@ -30,7 +30,8 @@ public class PLMScoreFunction extends ScoreFunction<Scorable> {
    public void prepareRetrieve() {
       mu = repository.configuredInt("kld.mu", 2500);
       documentpriorweight = scorables.size();
-      doctf = (DocTF) retrievalmodel.requestFeature(DocTF.class, "all");
+      doctf = DocTF.get(repository, "all");
+      retrievalmodel.requestFeature(doctf);
    }
 
    @Override

@@ -60,7 +60,8 @@ public class PLMProximityModel extends Operator {
 
    @Override
    public void prepareRetrieval() {
-      doctf = (DocTF) root.retrievalmodel.requestFeature(DocTF.class, "all");
+      doctf = DocTF.get(repository, "all");
+      retrievalmodel.requestFeature(doctf);
       termpositions = new ProximityPartialSet(new ArrayList<PositionalOperator>(containednodes));
    }
 

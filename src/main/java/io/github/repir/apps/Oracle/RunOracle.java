@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import io.github.repir.tools.MapReduce.Configuration;
+import io.github.repir.MapReduceTools.Configuration;
 import org.apache.hadoop.mapred.JobPriority;
 import io.github.repir.Retriever.MapReduce.QueryIterator;
 import io.github.repir.Retriever.MapReduce.QueueIterator;

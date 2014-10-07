@@ -1,13 +1,12 @@
 package util;
 
-import java.util.Map;
-import io.github.repir.Repository.Repository;
-import io.github.repir.Repository.ModelSpeed.Record;
 import io.github.repir.Repository.ModelSpeed;
-import io.github.repir.tools.DataTypes.TreeMapComparable;
-import io.github.repir.tools.DataTypes.TreeMapComparable.TYPE;
+import io.github.repir.Repository.ModelSpeed.Record;
+import io.github.repir.Repository.Repository;
+import io.github.repir.tools.Collection.ArrayMap;
 import io.github.repir.tools.Lib.Log;
 import io.github.repir.tools.Lib.PrintTools;
+import java.util.Map;
 
 public class listspeed {
 
@@ -15,13 +14,13 @@ public class listspeed {
    
    public static void main(String[] args) {
       Repository repository = new Repository(args, "{settings}");
-      ModelSpeed f = (ModelSpeed) repository.getFeature(ModelSpeed.class);
+      ModelSpeed f = ModelSpeed.get(repository);
       list(f, repository.configuredStrings("settings"));
    }
    
    public static void list(ModelSpeed f, String settings[]) {
       f.openRead();
-      TreeMapComparable<Integer, String> sorted = new TreeMapComparable<Integer, String>(TYPE.DUPLICATESASCENDING);
+      ArrayMap<Integer, String> sorted = new ArrayMap();
       NOTOK:
       for (Record r : f.getKeys()) {
          String qid = PrintTools.sprintf("%.6f", r.time);
@@ -37,9 +36,9 @@ public class listspeed {
             continue NOTOK;
          
          }
-         sorted.put(r.query, r.time + " " + r.strategy);
+         sorted.add(r.query, r.time + " " + r.strategy);
       }
-      for (Map.Entry<Integer,String> e : sorted.entrySet()) {
+      for (Map.Entry<Integer,String> e : sorted.ascending()) {
          log.printf("%03d %s", e.getKey(), e.getValue());
       }
    }

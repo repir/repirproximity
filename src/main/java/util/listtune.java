@@ -1,14 +1,15 @@
 package util;
 
-import java.util.Map;
 import io.github.repir.Repository.ModelParameters;
-import io.github.repir.Repository.Repository;
 import io.github.repir.Repository.ModelParameters.Record;
-import io.github.repir.tools.DataTypes.TreeMapComparable;
-import io.github.repir.tools.DataTypes.TreeMapComparable.TYPE;
+import io.github.repir.Repository.Repository;
+import io.github.repir.tools.Collection.ArrayMap;
+import io.github.repir.tools.Collection.ArrayMap.Entry;
 import io.github.repir.tools.Lib.Log;
 import io.github.repir.tools.Lib.PrintTools;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Map;
 
 public class listtune {
 
@@ -16,12 +17,12 @@ public class listtune {
    
    public static void main(String[] args) {
       Repository repository = new Repository(args, "{settings}");
-      ModelParameters f = (ModelParameters) repository.getFeature(ModelParameters.class, repository.configurationName());
+      ModelParameters f = ModelParameters.get(repository, repository.configurationName());
       list(f.load(), repository.configuredStrings("settings"));
    }
    
    public static void list(HashMap<Record, Record> list, String settings[]) {
-      TreeMapComparable<Double, String> sorted = new TreeMapComparable<Double, String>(TYPE.DUPLICATESDESCENDING);
+      ArrayMap<Double, String> sorted = new ArrayMap();
       NOTOK:
       for (Record r : list.values()) {
          String map = PrintTools.sprintf("%.6f", r.map);
@@ -37,9 +38,9 @@ public class listtune {
             }
             continue NOTOK;
          }
-         sorted.put(r.map, r.parameters.toString());
+         sorted.add(r.map, r.parameters.toString());
       }
-      for (Map.Entry<Double,String> e : sorted.entrySet()) {
+      for (Map.Entry<Double,String> e : sorted.descending()) {
          log.printf("%f list %s", e.getKey(), e.getValue());
       }
    }

@@ -14,7 +14,7 @@ public class mergetune {
    public static void main(String[] args) {
       Repository repository = new Repository(args, "path {settings}");
       ModelParameters f;
-      f = (ModelParameters) repository.getFeature(ModelParameters.class, repository.configurationName());
+      f = ModelParameters.get(repository, repository.configurationName());
       HashMap<Record,Record> baselist = f.load();
       baselist = transform(baselist);
       listtune.list(baselist, repository.configuredStrings("settings"));

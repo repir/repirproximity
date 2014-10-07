@@ -18,7 +18,7 @@ public class retaintune {
       ArgsParser parsedargs = new ArgsParser(args, "configfile qualifier retainpar retainvalue");
       Repository repository = new Repository(parsedargs.get("configfile"));
       
-      ModelParameters f = (ModelParameters) repository.getFeature(ModelParameters.class, repository.configurationName());
+      ModelParameters f = ModelParameters.get(repository, repository.configurationName());
       remove(f, parsedargs.get("qualifier"), parsedargs.get("retainpar"), parsedargs.get("retainvalue"));
    }
    

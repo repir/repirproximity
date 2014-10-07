@@ -22,6 +22,16 @@ public class ModelSpeed extends StoredDynamicFeature<File, Record> {
       super(repository);
    }
 
+   public static ModelSpeed get(Repository repository) {
+       String label = canonicalName(ModelSpeed.class);
+       ModelSpeed modelspeed = (ModelSpeed)repository.getStoredFeature(label);
+       if (modelspeed == null) {
+          modelspeed = new ModelSpeed(repository);
+          repository.storeFeature(label, modelspeed);
+       }
+       return modelspeed;
+   }
+   
    @Override
    public File createFile(Datafile df) {
       return new File(df);

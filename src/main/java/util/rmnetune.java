@@ -18,7 +18,7 @@ public class rmnetune {
       ArgsParser parsedargs = new ArgsParser(args, "configfile present notpresent");
       Repository repository = new Repository(parsedargs.get("configfile"));
       
-      ModelParameters f = (ModelParameters) repository.getFeature(ModelParameters.class, repository.configurationName());
+      ModelParameters f = ModelParameters.get(repository, repository.configurationName());
       remove(f, parsedargs.get("present"), parsedargs.get("notpresent"));
    }
    

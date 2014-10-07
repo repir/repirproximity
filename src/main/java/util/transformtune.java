@@ -15,12 +15,12 @@ public class transformtune {
    public static void main(String[] args) {
       Repository repository = new Repository(args);
       ModelParameters f;
-      f = (ModelParameters) repository.getFeature(ModelParameters.class, repository.configurationName());
+      f = ModelParameters.get(repository, repository.configurationName());
       HashMap<Record,Record> baselist = f.load();
       baselist = transform(baselist);
       Datafile df = f.getStoredFeatureFile();
       df.delete();
-      f.setBufferSize(1000000);
+      f.getFile().setBufferSize(1000000);
       f.openWrite();
       for (Record r : baselist.values()) {
          f.write(r);
