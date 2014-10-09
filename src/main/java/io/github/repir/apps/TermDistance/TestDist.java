@@ -25,7 +25,7 @@
 //
 //   public static void main(String[] args) throws Exception {
 //      Configuration conf = HDTools.readConfig( args, "[topicid]" );
-//      conf.set("mapred.job.priority", JobPriority.NORMAL.toString());
+//      conf.set("mapreduce.job.priority", JobPriority.NORMAL.toString());
 //      System.exit( HDTools.run(conf, new TestDist()));
 //   }
 //
@@ -34,7 +34,7 @@
 //      Repository repository = new Repository(getConf());
 //      repository.getConfiguration().setInt("retriever.limit", Integer.MAX_VALUE);
 //      repository.getConfiguration().set("retriever.strategy", "RetrievalModel");
-//      repository.getConfiguration().setInt("mapred.task.timeout", 60 * 60 * 1000);
+//      repository.getConfiguration().setInt("mapreduce.task.timeout", 60 * 60 * 1000);
 //      int topic = repository.configuredInt("topicid", -1);
 //      Retriever retriever = new Retriever(repository);
 //      TestSet bm = new TestSet(repository);

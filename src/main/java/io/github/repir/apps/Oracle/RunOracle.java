@@ -53,8 +53,8 @@ public class RunOracle {
    }
    
    public RunOracle(String args[]) {
-      Configuration conf = new Configuration(args, "topicid {query}");
-      Repository repository = new Repository(conf);
+      Repository repository = new Repository(args, "topicid {query}");
+      Configuration conf = repository.getConfiguration();
       conf.set("mapred.job.priority", JobPriority.HIGH.toString());
       conf.setBoolean("retriever.removestopwords", false);
       conf.setBoolean("inputformat.canslit", true);
