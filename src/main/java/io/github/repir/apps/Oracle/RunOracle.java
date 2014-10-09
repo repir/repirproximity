@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
-import io.github.repir.MapReduceTools.Configuration;
+import io.github.repir.MapReduceTools.RRConfiguration;
 import org.apache.hadoop.mapred.JobPriority;
 import io.github.repir.Retriever.MapReduce.QueryIterator;
 import io.github.repir.Retriever.MapReduce.QueueIterator;
@@ -54,7 +54,7 @@ public class RunOracle {
    
    public RunOracle(String args[]) {
       Repository repository = new Repository(args, "topicid {query}");
-      Configuration conf = repository.getConfiguration();
+      RRConfiguration conf = repository.getConfiguration();
       conf.set("mapred.job.priority", JobPriority.HIGH.toString());
       conf.setBoolean("retriever.removestopwords", false);
       conf.setBoolean("inputformat.canslit", true);

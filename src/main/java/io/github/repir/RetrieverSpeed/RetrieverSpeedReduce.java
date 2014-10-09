@@ -11,7 +11,7 @@ import io.github.repir.Repository.ModelSpeed;
 import io.github.repir.Repository.Repository;
 import io.github.repir.Strategy.Strategy;
 import io.github.repir.Retriever.Query;
-import io.github.repir.MapReduceTools.Configuration;
+import io.github.repir.MapReduceTools.RRConfiguration;
 import io.github.repir.tools.Lib.Log;
 
 /**
@@ -29,7 +29,7 @@ public class RetrieverSpeedReduce extends Reducer<RecordedTime, NullWritable, Nu
    public static Log log = new Log(RetrieverMRReduce.class);
    HashMap<Integer, Query> queries;
    HashMap<Integer, Strategy> strategies = new HashMap<Integer, Strategy>();
-   Configuration conf;
+   RRConfiguration conf;
    Repository repository;
    ModelSpeed modelspeed;
    ArrayList<Record> records = new ArrayList<Record>();
