@@ -5,7 +5,7 @@ import io.github.repir.Retriever.MapReduce.Retriever;
 import io.github.repir.tools.Lib.Log;
 import io.github.repir.Repository.Repository;
 import io.github.repir.Repository.Stopwords.StopWords;
-import io.github.repir.tools.Stemmer.englishStemmer;
+import io.github.repir.tools.Words.englishStemmer;
 import io.github.repir.TestSet.Metric.QueryMetricAP;
 import io.github.repir.TestSet.TestSet;
 import java.util.ArrayList;
