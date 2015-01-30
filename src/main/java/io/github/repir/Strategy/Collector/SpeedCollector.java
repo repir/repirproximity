@@ -5,11 +5,11 @@ import io.github.repir.Repository.ModelSpeed;
 import io.github.repir.Repository.ModelSpeed.Record;
 import io.github.repir.Retriever.Document;
 import io.github.repir.Strategy.RetrievalModel;
-import io.github.repir.tools.Content.EOCException;
-import io.github.repir.tools.Structure.StructureReader;
-import io.github.repir.tools.Structure.StructureWriter;
-import io.github.repir.tools.Lib.Log;
-import io.github.repir.tools.Lib.Profiler;
+import io.github.repir.tools.io.EOCException;
+import io.github.repir.tools.io.struct.StructureReader;
+import io.github.repir.tools.io.struct.StructureWriter;
+import io.github.repir.tools.lib.Log;
+import io.github.repir.tools.lib.Profiler;
 
 /**
  * Measures to time taken to retrieve a ranked list for a query in the mapper.
@@ -18,7 +18,6 @@ import io.github.repir.tools.Lib.Profiler;
 public class SpeedCollector extends CollectorCachable<Record> {
 
    public static Log log = new Log(SpeedCollector.class);
-   public static Profiler profiler = new Profiler(SpeedCollector.class);
    static ModelSpeed dummyfeature = new ModelSpeed(null);
    HashMap<Record, Record> records = new HashMap<Record, Record>();
 
@@ -148,13 +147,13 @@ public class SpeedCollector extends CollectorCachable<Record> {
       Record r = createRecord();
       r.query = strategy.query.id;
       r.strategy = strategy.query.getStrategyClass();
-      r.time = profiler.getTimePassed() / 1000;
+      r.time = Profiler.timePassed("speedCollector") / 1000;
       records.put(r, r);
    }
 
    @Override
    public void prepareRetrieval() {
-     profiler.startTime();
+     Profiler.startTime("speedCollector");
    }
 
    @Override

@@ -1,7 +1,7 @@
 package io.github.repir.Strategy.Operator;
 
 import io.github.repir.Retriever.Document;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 import io.github.repir.Repository.DocTF;
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;

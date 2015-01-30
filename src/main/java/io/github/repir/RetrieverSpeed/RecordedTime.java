@@ -3,9 +3,9 @@ import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 import org.apache.hadoop.io.WritableComparable;
-import io.github.repir.tools.Buffer.BufferDelayedWriter;
-import io.github.repir.tools.Buffer.BufferReaderWriter;
-import io.github.repir.tools.Lib.Log; 
+import io.github.repir.tools.io.buffer.BufferDelayedWriter;
+import io.github.repir.tools.io.buffer.BufferReaderWriter;
+import io.github.repir.tools.lib.Log; 
 
 /**
  *

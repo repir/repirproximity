@@ -4,8 +4,8 @@ import java.util.Map;
 import io.github.repir.Repository.ModelParameters;
 import io.github.repir.Repository.Repository;
 import io.github.repir.Repository.ModelParameters.Record;
-import io.github.repir.tools.Content.Datafile;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.io.Datafile;
+import io.github.repir.tools.lib.Log;
 import java.util.HashMap;
 
 public class transformtune {

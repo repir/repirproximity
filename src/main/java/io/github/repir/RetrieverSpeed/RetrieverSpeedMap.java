@@ -11,8 +11,8 @@ import io.github.repir.Retriever.MapReduce.CollectorKey;
 import io.github.repir.Retriever.MapReduce.QueryWritable;
 import io.github.repir.Retriever.MapReduce.QueryInputSplit;
 import io.github.repir.Strategy.Strategy;
-import io.github.repir.tools.Lib.Log;
-import io.github.repir.tools.Lib.Profiler;
+import io.github.repir.tools.lib.Log;
+import io.github.repir.tools.lib.Profiler;
 
 /**
  * The mapper is generic, and collects data for a query request, using the
@@ -26,7 +26,6 @@ import io.github.repir.tools.Lib.Profiler;
 public class RetrieverSpeedMap extends Mapper<NullWritable, QueryWritable, RecordedTime, NullWritable> {
 
    public static Log log = new Log(RetrieverSpeedMap.class);
-   public static Profiler profiler = new Profiler(RetrieverSpeedMap.class);
    public final int tries = 10;
    double times[] = new double[tries];
    
@@ -55,9 +54,9 @@ public class RetrieverSpeedMap extends Mapper<NullWritable, QueryWritable, Recor
       Strategy strategy = retriever.prepareStrategy(q, partition);
       retriever.retrieveSegment(strategy); // first dummy run
       for (int i = 0; i < 10; i++) {
-         profiler.startTime();
+         Profiler.startTime("retrieveSegment");
          retriever.retrieveSegment(strategy); // collect results for query from one index partition
-         times[i] = profiler.getTimePassed();   
+         times[i] = Profiler.timePassed("retrieveSegment");
       }
       TreeSet<Double> sorted = new TreeSet<Double>();
       for (double t : times) 

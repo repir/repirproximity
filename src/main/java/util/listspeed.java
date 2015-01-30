@@ -3,9 +3,9 @@ package util;
 import io.github.repir.Repository.ModelSpeed;
 import io.github.repir.Repository.ModelSpeed.Record;
 import io.github.repir.Repository.Repository;
-import io.github.repir.tools.Collection.ArrayMap;
-import io.github.repir.tools.Lib.Log;
-import io.github.repir.tools.Lib.PrintTools;
+import io.github.repir.tools.collection.ArrayMap;
+import io.github.repir.tools.lib.Log;
+import io.github.repir.tools.lib.PrintTools;
 import java.util.Map;
 
 public class listspeed {

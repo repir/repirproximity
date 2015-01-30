@@ -2,7 +2,7 @@ package io.github.repir.apps.Oracle;
 
 import io.github.repir.Retriever.Query;
 import io.github.repir.Retriever.MapReduce.Retriever;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 import io.github.repir.Repository.Repository;
 import io.github.repir.Repository.Stopwords.StopWords;
 import io.github.repir.tools.Words.englishStemmer;
@@ -17,7 +17,8 @@ import org.apache.hadoop.mapred.JobPriority;
 import io.github.repir.Retriever.MapReduce.QueryIterator;
 import io.github.repir.Retriever.MapReduce.QueueIterator;
 import io.github.repir.TestSet.ResultSet;
-import io.github.repir.tools.Lib.MathTools;
+import io.github.repir.tools.lib.MathTools;
+import java.io.IOException;
 
 /**
  * Breadth first search to expand a query with a set of (sub) optimal proximity 
@@ -48,13 +49,13 @@ public class RunOracle {
    public static String[] terms;
    public StopWords stopwords;
 
-   public static void main(String[] args) {
+   public static void main(String[] args) throws IOException {
       new RunOracle(args);
    }
    
-   public RunOracle(String args[]) {
+   public RunOracle(String args[]) throws IOException {
       Repository repository = new Repository(args, "topicid {query}");
-      RRConfiguration conf = repository.getConfiguration();
+      RRConfiguration conf = repository.getConf();
       conf.set("mapred.job.priority", JobPriority.HIGH.toString());
       conf.setBoolean("retriever.removestopwords", false);
       conf.setBoolean("inputformat.canslit", true);

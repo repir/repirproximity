@@ -12,7 +12,7 @@ import io.github.repir.Repository.Repository;
 import io.github.repir.Strategy.Strategy;
 import io.github.repir.Retriever.Query;
 import io.github.repir.MapReduceTools.RRConfiguration;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 
 /**
  * The reducer is generic, using the passed query with the name of the retrieval
@@ -37,7 +37,7 @@ public class RetrieverSpeedReduce extends Reducer<RecordedTime, NullWritable, Nu
    @Override
    protected void setup(Context context) throws IOException, InterruptedException {
       repository = new Repository(context.getConfiguration());
-      conf = repository.getConfiguration();
+      conf = repository.getConf();
       modelspeed = ModelSpeed.get(repository);
    }
 

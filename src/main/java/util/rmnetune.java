@@ -6,9 +6,9 @@ import java.util.TreeMap;
 import io.github.repir.Repository.ModelParameters;
 import io.github.repir.Repository.Repository;
 import io.github.repir.Repository.ModelParameters.Record;
-import io.github.repir.tools.Lib.ArgsParser;
-import io.github.repir.tools.Lib.Log;
-import io.github.repir.tools.Lib.PrintTools;
+import io.github.repir.tools.lib.ArgsParser;
+import io.github.repir.tools.lib.Log;
+import io.github.repir.tools.lib.PrintTools;
 
 public class rmnetune {
 

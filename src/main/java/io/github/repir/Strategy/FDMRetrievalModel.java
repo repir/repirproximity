@@ -9,7 +9,7 @@ import io.github.repir.Strategy.Strategy;
 import io.github.repir.Retriever.Retriever;
 import io.github.repir.Retriever.Query;
 import io.github.repir.Strategy.ScoreFunction.ScoreFunctionDirichletLM;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 
 /**
  * Implementation of Markov Random Field for term dependency by Metzler & Croft.
@@ -35,7 +35,7 @@ public class FDMRetrievalModel extends RetrievalModel {
    @Override
    public String getQueryToRetrieve() {
       query.setScorefunctionClassname(ScoreFunctionDirichletLM.class.getSimpleName());
-      return io.github.repir.tools.Lib.PrintTools.sprintf("%s:(%s) %s:(%s) %s:(%s)", 
+      return io.github.repir.tools.lib.PrintTools.sprintf("%s:(%s) %s:(%s) %s:(%s)", 
               FDMIndependentTerms.class.getSimpleName(), query.query, 
               FDMOrderedCombinations.class.getSimpleName(), query.query, 
               FDMUnorderedCombinations.class.getSimpleName(), query.query);

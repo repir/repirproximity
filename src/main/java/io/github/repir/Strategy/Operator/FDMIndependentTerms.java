@@ -1,7 +1,7 @@
 package io.github.repir.Strategy.Operator;
 
 import io.github.repir.Strategy.GraphRoot;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 import java.util.ArrayList;
 
 /**

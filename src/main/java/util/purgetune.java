@@ -9,9 +9,9 @@ import io.github.repir.Repository.ModelParameters.Record;
 import io.github.repir.Retriever.Tuner.Parameter;
 import io.github.repir.Retriever.Query;
 import io.github.repir.Retriever.Tuner.Retriever;
-import io.github.repir.tools.Lib.ArgsParser;
-import io.github.repir.tools.Lib.Log;
-import io.github.repir.tools.Lib.PrintTools;
+import io.github.repir.tools.lib.ArgsParser;
+import io.github.repir.tools.lib.Log;
+import io.github.repir.tools.lib.PrintTools;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -35,7 +35,7 @@ public class purgetune {
       for (String setting : settings) {
          repository.addConfiguration(setting);
          for (int i = 0; i < 10; i++) {
-            repository.getConfiguration().setInt("fold", i);
+            repository.getConf().setInt("fold", i);
             Record newRecord = f.newRecord(storedparameters);
             Record found = list.get(newRecord);
             if (found != null) {

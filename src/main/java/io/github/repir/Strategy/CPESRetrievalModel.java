@@ -2,7 +2,7 @@ package io.github.repir.Strategy;
 
 import io.github.repir.Strategy.Operator.CPESProximityModel;
 import io.github.repir.Retriever.Retriever;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 
 /**
  * Implementation of CPE by Vuurens and de Vries (2013) parameters:

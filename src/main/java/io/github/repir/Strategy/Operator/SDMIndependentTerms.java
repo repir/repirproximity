@@ -4,7 +4,7 @@ import io.github.repir.Strategy.Operator.Operator;
 import io.github.repir.Strategy.Operator.OperatorExpander;
 import io.github.repir.Strategy.GraphRoot;
 import io.github.repir.Strategy.GraphRoot;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 import java.util.ArrayList;
 
 /**

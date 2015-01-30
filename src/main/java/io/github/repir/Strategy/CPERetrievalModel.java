@@ -5,7 +5,7 @@ import io.github.repir.Strategy.RetrievalModelExpander;
 import io.github.repir.Strategy.GraphRoot;
 import io.github.repir.Retriever.Retriever;
 import io.github.repir.Retriever.Query;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 
 /**
  * Expands a Query of independent terms with the Proximity Model described 

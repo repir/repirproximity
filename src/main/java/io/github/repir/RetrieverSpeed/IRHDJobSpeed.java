@@ -3,7 +3,7 @@ package io.github.repir.RetrieverSpeed;
 import io.github.repir.Retriever.MapReduce.RetrieverJob;
 import io.github.repir.Retriever.MapReduce.QueryInputFormat;
 import io.github.repir.Retriever.Retriever;
-import io.github.repir.tools.Lib.Log;
+import io.github.repir.tools.lib.Log;
 import java.io.IOException;
 import java.util.Collection;
 import org.apache.hadoop.io.NullWritable;

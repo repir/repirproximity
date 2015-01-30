@@ -11,8 +11,8 @@ import io.github.repir.Strategy.Tools.ProximityOccurrence;
 import io.github.repir.Strategy.Tools.ProximityPartialSet;
 import io.github.repir.Strategy.Tools.ProximitySet;
 import io.github.repir.Strategy.Tools.ProximitySet.ProximityTerm;
-import io.github.repir.tools.Lib.Log;
-import io.github.repir.tools.Lib.MathTools;
+import io.github.repir.tools.lib.Log;
+import io.github.repir.tools.lib.MathTools;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -293,7 +293,7 @@ public class CPEProximityModel extends Operator {
       long maxid = (1l << poper.size());
       ID:
       for (int pattern = 2; pattern < maxid; pattern++) {
-         int phrase_number_of_terms = io.github.repir.tools.Lib.MathTools.numberOfSetBits(pattern);
+         int phrase_number_of_terms = io.github.repir.tools.lib.MathTools.numberOfSetBits(pattern);
          if (phrase_number_of_terms > 1) {
             long modifiedpattern = termpositions.convertDuplicatesInPattern(pattern);
             if (!phrases.containsKey(modifiedpattern)) {
