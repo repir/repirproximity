@@ -4,10 +4,8 @@ import io.github.repir.Repository.ModelParameters;
 import io.github.repir.Repository.ModelParameters.Record;
 import io.github.repir.Repository.Repository;
 import io.github.repir.tools.collection.ArrayMap;
-import io.github.repir.tools.collection.ArrayMap.Entry;
 import io.github.repir.tools.lib.Log;
 import io.github.repir.tools.lib.PrintTools;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
