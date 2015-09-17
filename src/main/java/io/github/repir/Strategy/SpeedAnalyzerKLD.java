@@ -6,7 +6,7 @@ import io.github.repir.Retriever.Query;
 import io.github.repir.Retriever.Retriever;
 import io.github.repir.Strategy.Collector.CollectorDocumentSpeed;
 import io.github.repir.Strategy.Collector.SpeedCollector;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 
 /**
  * Measures the retrieval speed by setting up a SpeedCollector. 

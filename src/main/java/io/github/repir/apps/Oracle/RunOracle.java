@@ -2,10 +2,10 @@ package io.github.repir.apps.Oracle;
 
 import io.github.repir.Retriever.Query;
 import io.github.repir.Retriever.MapReduce.Retriever;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 import io.github.repir.Repository.Repository;
 import io.github.repir.Repository.Stopwords.StopWords;
-import io.github.repir.tools.Words.englishStemmer;
+import io.github.htools.words.englishStemmer;
 import io.github.repir.TestSet.Metric.QueryMetricAP;
 import io.github.repir.TestSet.TestSet;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import org.apache.hadoop.mapred.JobPriority;
 import io.github.repir.Retriever.MapReduce.QueryIterator;
 import io.github.repir.Retriever.MapReduce.QueueIterator;
 import io.github.repir.TestSet.ResultSet;
-import io.github.repir.tools.lib.MathTools;
+import io.github.htools.lib.MathTools;
 import java.io.IOException;
 
 /**

@@ -1,7 +1,7 @@
 package io.github.repir.Strategy.Operator;
 
 import io.github.repir.Strategy.GraphRoot;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 import java.util.ArrayList;
 
 /**
@@ -32,7 +32,7 @@ public class FDMUnorderedCombinations extends OperatorExpander {
          }
       }
       for (long i = 0; i < (1l << containednodes.size()); i++) {
-         if (io.github.repir.tools.lib.MathTools.numberOfSetBits(i) > 1) {
+         if (io.github.htools.lib.MathTools.numberOfSetBits(i) > 1) {
             ArrayList<Operator> nodes = new ArrayList<Operator>();
             for (int j = 0; j < containednodes.size(); j++) {
                if ((i & (1l << j)) != 0) {

@@ -5,7 +5,7 @@ import io.github.repir.Strategy.Collector.CollectorDocument;
 import java.util.ArrayList;
 import java.util.Collection;
 import io.github.repir.Strategy.RetrievalModel;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 
 /**
  * Replaces CollectorDocument when measuring retrieval speed, to avoid retrieved 

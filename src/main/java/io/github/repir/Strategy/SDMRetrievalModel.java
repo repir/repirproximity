@@ -6,7 +6,7 @@ import io.github.repir.Strategy.Operator.SDMIndependentTerms;
 import io.github.repir.Retriever.Retriever;
 import io.github.repir.Retriever.Query;
 import io.github.repir.Strategy.ScoreFunction.ScoreFunctionDirichletLM;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 
 /**
  * Implementation of the Sequential Dependency as described by
@@ -35,7 +35,7 @@ public class SDMRetrievalModel extends RetrievalModel {
    @Override
    public String getQueryToRetrieve() {
       query.setScorefunctionClassname(ScoreFunctionDirichletLM.class.getSimpleName());
-      return io.github.repir.tools.lib.PrintTools.sprintf("%s:(%s) %s:(%s) %s:(%s)", 
+      return io.github.htools.lib.PrintTools.sprintf("%s:(%s) %s:(%s) %s:(%s)", 
               SDMIndependentTerms.class.getSimpleName(), query.query, 
               SDMOrderedCombinations.class.getSimpleName(), query.query, 
               SDMUnorderedCombinations.class.getSimpleName(), query.query);

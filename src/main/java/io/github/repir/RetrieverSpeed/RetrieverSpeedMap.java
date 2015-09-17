@@ -11,8 +11,8 @@ import io.github.repir.Retriever.MapReduce.CollectorKey;
 import io.github.repir.Retriever.MapReduce.QueryWritable;
 import io.github.repir.Retriever.MapReduce.QueryInputSplit;
 import io.github.repir.Strategy.Strategy;
-import io.github.repir.tools.lib.Log;
-import io.github.repir.tools.lib.Profiler;
+import io.github.htools.lib.Log;
+import io.github.htools.lib.Profiler;
 
 /**
  * The mapper is generic, and collects data for a query request, using the

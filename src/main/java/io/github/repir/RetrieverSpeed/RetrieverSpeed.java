@@ -4,7 +4,7 @@ import io.github.repir.Retriever.PostingIteratorReusable;
 import java.io.IOException;
 import io.github.repir.Repository.Repository;
 import io.github.repir.Retriever.MapReduce.Retriever;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 
 /**
  * Obsolete

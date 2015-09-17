@@ -1,9 +1,9 @@
 package io.github.repir.apps.TermDistance;
 
-import io.github.repir.tools.io.buffer.BufferDelayedWriter;
-import io.github.repir.tools.io.buffer.BufferReaderWriter;
+import io.github.htools.io.buffer.BufferDelayedWriter;
+import io.github.htools.io.buffer.BufferReaderWriter;
 import io.github.repir.Retriever.Document;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 import io.github.repir.Repository.DocLiteral;
 import io.github.repir.Repository.ReportedUnstoredFeature;
 import io.github.repir.Repository.Repository;
@@ -18,7 +18,7 @@ import io.github.repir.Strategy.RetrievalModel;
 import io.github.repir.Strategy.Strategy;
 import io.github.repir.Strategy.Tools.MatchSetLength;
 import io.github.repir.Strategy.Tools.ProximityOccurrence;
-import io.github.repir.tools.io.EOCException;
+import io.github.htools.io.EOCException;
 
 /**
  * Collects the distance distribution for Phrase occurrences. Typically, this is

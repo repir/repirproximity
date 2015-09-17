@@ -3,9 +3,9 @@ package util;
 import io.github.repir.Repository.ModelParameters;
 import io.github.repir.Repository.ModelParameters.Record;
 import io.github.repir.Repository.Repository;
-import io.github.repir.tools.collection.ArrayMap;
-import io.github.repir.tools.lib.Log;
-import io.github.repir.tools.lib.PrintTools;
+import io.github.htools.collection.ArrayMap;
+import io.github.htools.lib.Log;
+import io.github.htools.lib.PrintTools;
 import java.util.HashMap;
 import java.util.Map;
 

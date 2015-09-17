@@ -11,9 +11,9 @@ import io.github.repir.Strategy.Tools.MatchSetLength;
 import io.github.repir.Strategy.Tools.MatchSetPositional;
 import io.github.repir.Strategy.Tools.ProximitySet.ProximityTerm;
 import io.github.repir.Strategy.Tools.ProximityStopwordsSet;
-import io.github.repir.tools.lib.ArrayTools;
-import io.github.repir.tools.lib.Log;
-import io.github.repir.tools.lib.MathTools;
+import io.github.htools.lib.ArrayTools;
+import io.github.htools.lib.Log;
+import io.github.htools.lib.MathTools;
 
 /**
  * This variant of CPE uses stop words to form valid combinations.

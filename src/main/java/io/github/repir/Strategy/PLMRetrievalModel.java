@@ -4,7 +4,7 @@ import io.github.repir.Strategy.Operator.PLMProximityModel;
 import io.github.repir.Strategy.RetrievalModel;
 import io.github.repir.Retriever.Retriever;
 import io.github.repir.Strategy.ScoreFunction.PLMScoreFunction;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 
 /**
  * Implementation of Zhao & Yun's Proximity Language Model
@@ -21,7 +21,7 @@ public class PLMRetrievalModel extends RetrievalModel {
    @Override
    public String getQueryToRetrieve() {
       query.setScorefunctionClassname(PLMScoreFunction.class.getSimpleName());
-      return io.github.repir.tools.lib.PrintTools.sprintf("%s:(%s)", 
+      return io.github.htools.lib.PrintTools.sprintf("%s:(%s)", 
               PLMProximityModel.class.getSimpleName(), query.query );
    }
 }

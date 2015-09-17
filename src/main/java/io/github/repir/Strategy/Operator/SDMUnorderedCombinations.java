@@ -7,7 +7,7 @@ import io.github.repir.Strategy.Operator.ProximityOperatorUnordered;
 import io.github.repir.Strategy.Operator.OperatorExpander;
 import io.github.repir.Strategy.GraphRoot;
 import io.github.repir.Strategy.GraphRoot;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 import java.util.ArrayList;
 
 /**

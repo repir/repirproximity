@@ -5,11 +5,11 @@ import io.github.repir.Repository.ModelSpeed;
 import io.github.repir.Repository.ModelSpeed.Record;
 import io.github.repir.Retriever.Document;
 import io.github.repir.Strategy.RetrievalModel;
-import io.github.repir.tools.io.EOCException;
-import io.github.repir.tools.io.struct.StructureReader;
-import io.github.repir.tools.io.struct.StructureWriter;
-import io.github.repir.tools.lib.Log;
-import io.github.repir.tools.lib.Profiler;
+import io.github.htools.io.EOCException;
+import io.github.htools.io.struct.StructureReader;
+import io.github.htools.io.struct.StructureWriter;
+import io.github.htools.lib.Log;
+import io.github.htools.lib.Profiler;
 
 /**
  * Measures to time taken to retrieve a ranked list for a query in the mapper.

@@ -4,7 +4,7 @@ import java.util.Map;
 import io.github.repir.Repository.ModelParameters;
 import io.github.repir.Repository.Repository;
 import io.github.repir.Repository.ModelParameters.Record;
-import io.github.repir.tools.lib.Log;
+import io.github.htools.lib.Log;
 import java.util.HashMap;
 
 public class mergetune {

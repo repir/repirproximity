@@ -3,14 +3,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.repir</groupId>
-        <artifactId>RepIRProx</artifactId>
-        <version>0.26-SNAPSHOT</version>
-        <relativePath>../RepIRProx/pom.xml</relativePath>
+        <artifactId>repirparent</artifactId>
+        <version>0.26</version>
+        <relativePath>../repirparent/pom.xml</relativePath>
     </parent>
-    <artifactId>RepIRProximity</artifactId>
+    <artifactId>repirproximity</artifactId>
     <packaging>jar</packaging>
-    <name>RepIRProximity</name>
+    <version>0.26</version>
+    <name>repirproximity</name>
   
+    <description>Retrieval models for proximity study</description>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <src.dir>${basedir}/src/main/java</src.dir>
@@ -18,9 +21,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:git@github.com:RepIR/RepIRProximity.git</connection>
-        <developerConnection>scm:git:git@github.com:RepIR/RepIRProximity.git</developerConnection>
-        <url>git@github.com:RepIR/RepIRProximity.git</url>
+        <connection>scm:git:git@github.com:repir/repirproximity.git</connection>
+        <developerConnection>scm:git:git@github.com:repir/repirproximity.git</developerConnection>
+        <url>git@github.com:repir/repirproximity.git</url>
     </scm>
    
     <build>
@@ -34,9 +37,9 @@
                 <configuration>
                     <target>  
                         <scp todir="${repirdir}" 
-                       keyfile="${keyfile}"
-                       trust="true" failonerror="false"
-                       file="${project.build.directory}/${project.build.finalName}.jar">
+                             keyfile="${keyfile}"
+                             trust="true" failonerror="false"
+                             file="${project.build.directory}/${project.build.finalName}.jar">
                         </scp>
                     </target>
                 </configuration>
@@ -59,13 +62,18 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>RepIRTools</artifactId>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>RepIR</artifactId>
+            <artifactId>repir</artifactId>
             <type>jar</type>
         </dependency>
     </dependencies>
+    
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>repir</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
